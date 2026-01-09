@@ -219,6 +219,7 @@ import org.telegram.ui.Stories.recorder.CaptionContainerView;
 import org.telegram.ui.Stories.recorder.DominantColors;
 
 import tw.nekomimi.nekogram.NekoConfig;
+import tw.nekomimi.nekogram.accessibility.AccConfig;
 import tw.nekomimi.nekogram.helpers.MessageFilterHelper;
 import tw.nekomimi.nekogram.helpers.MessageHelper;
 import tw.nekomimi.nekogram.helpers.WhisperHelper;
@@ -16991,7 +16992,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
             }
         }
-        if (currentFocusedVirtualView == -1 && isFocused()) sendAccessibilityEventForVirtualView(-1, AccessibilityEvent.TYPE_ANNOUNCEMENT, (int)(progress * 100) + "%");
+        if (currentFocusedVirtualView == -1 && AccConfig.announceFileProgress) sendAccessibilityEventForVirtualView(-1, AccessibilityEvent.TYPE_ANNOUNCEMENT, (int)(progress * 100) + "%");
     }
 
     @Override
@@ -17012,7 +17013,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             lastLoadingSizeTotal = totalSize;
         }
         createLoadingProgressLayout(uploadedSize, totalSize);
-        if (currentFocusedVirtualView == -1 && isFocused()) sendAccessibilityEventForVirtualView(-1, AccessibilityEvent.TYPE_ANNOUNCEMENT, (int)(progress * 100) + "%");
+        if (currentFocusedVirtualView == -1 && AccConfig.announceFileProgress) sendAccessibilityEventForVirtualView(-1, AccessibilityEvent.TYPE_ANNOUNCEMENT, (int)(progress * 100) + "%");
     }
 
     private void createLoadingProgressLayout(TLRPC.Document document) {
@@ -17192,7 +17193,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         } else if (currentMessageObject.shouldBlockMessage()) {
             timeString = MessageHelper.createBlockedString(currentMessageObject);
             customDrawableWidth = Theme.chat_blockDrawable.getIntrinsicWidth();
-        } else if (currentMessageObject.translated) {
+        } else if (currentMessageObject.translated && AccConfig.showTranslatedLanguage) {
             timeString = MessageHelper.createTranslateString(currentMessageObject);
             customDrawableWidth = timeString instanceof SpannableStringBuilder ? Theme.chat_arrowDrawable.getIntrinsicWidth() : 0;
         } else if (edited) {
@@ -24490,6 +24491,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
         super.onInitializeAccessibilityNodeInfo(info);
+    }
+
+    @Override
+    public CharSequence getContentDescription() {
+        return accessibilityText;
     }
 
     @Override
