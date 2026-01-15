@@ -55,7 +55,9 @@ import org.telegram.ui.Stories.recorder.HintView2;
 import java.util.ArrayList;
 import java.util.List;
 
+import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.settings.NekoLanguagesSelectActivity;
+import tw.nekomimi.nekogram.translator.Translator;
 
 public class TranslateButton extends FrameLayout {
 
@@ -345,7 +347,8 @@ public class TranslateButton extends FrameLayout {
         });
         popupLayout.addView(hideButton);
 
-        popupLayout.addView(new ActionBarPopupWindow.GapView(getContext(), resourcesProvider), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 8));
+        var isCocoon = Translator.PROVIDER_TELEGRAM.equals(NekoConfig.translationProvider);
+        if (isCocoon) popupLayout.addView(new ActionBarPopupWindow.GapView(getContext(), resourcesProvider), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 8));
 
         final LinkSpanDrawable.LinksTextView cocoonButton = new LinkSpanDrawable.LinksTextView(getContext());
         cocoonButton.setPadding(dp(13), dp(8.33f), dp(13), dp(8.33f));
@@ -369,7 +372,7 @@ public class TranslateButton extends FrameLayout {
             popupWindow.dismiss();
             showCocoonAlert(getContext(), resourcesProvider);
         });
-        popupLayout.addView(cocoonButton);
+        if (isCocoon) popupLayout.addView(cocoonButton);
 
         popupWindow.setPauseNotifications(true);
         popupWindow.setDismissAnimationDuration(220);
