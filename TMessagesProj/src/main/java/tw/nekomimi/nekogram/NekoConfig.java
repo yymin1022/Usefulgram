@@ -145,6 +145,7 @@ public class NekoConfig {
     public static boolean minimizedStickerCreator = false;
     public static boolean hideChannelBottomButtons = false;
     public static boolean keepFormatting = true;
+    public static boolean predictiveBackAnimation = false;
 
     public static boolean shouldNOTTrustMe = false;
 
@@ -250,6 +251,7 @@ public class NekoConfig {
             minimizedStickerCreator = preferences.getBoolean("minimizedStickerCreator", false);
             hideChannelBottomButtons = preferences.getBoolean("hideChannelBottomButtons", false);
             keepFormatting = preferences.getBoolean("keepFormatting", true);
+            predictiveBackAnimation = preferences.getBoolean("predictiveBackAnimation", false);
 
             LensHelper.checkLensSupportAsync();
             preferences.registerOnSharedPreferenceChangeListener(listener);
@@ -397,6 +399,14 @@ public class NekoConfig {
         SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("nekoconfig", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt("downloadSpeedBoost2", boost);
+        editor.apply();
+    }
+
+    public static void togglePredictiveBackAnimation() {
+        predictiveBackAnimation = !predictiveBackAnimation;
+        SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("nekoconfig", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("predictiveBackAnimation", predictiveBackAnimation);
         editor.apply();
     }
 

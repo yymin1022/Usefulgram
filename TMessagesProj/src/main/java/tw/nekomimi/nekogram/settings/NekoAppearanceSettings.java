@@ -40,6 +40,7 @@ public class NekoAppearanceSettings extends BaseNekoSettingsActivity implements 
     private int appearanceRow;
     private int emojiSetsRow;
     private int mediaPreviewRow;
+    private int predictiveBackAnimationRow;
     private int appBarShadowRow;
     private int formatTimeWithSecondsRow;
     private int disableNumberRoundingRow;
@@ -176,6 +177,12 @@ public class NekoAppearanceSettings extends BaseNekoSettingsActivity implements 
                 listAdapter.notifyItemChanged(tabsTitleTypeRow, PARTIAL);
                 getNotificationCenter().postNotificationName(NotificationCenter.dialogFiltersUpdated);
             }, resourcesProvider);
+        } else if (position == predictiveBackAnimationRow) {
+            NekoConfig.togglePredictiveBackAnimation();
+            if (view instanceof TextCheckCell) {
+                ((TextCheckCell) view).setChecked(NekoConfig.predictiveBackAnimation);
+            }
+            showRestartBulletin();
         }
     }
 
@@ -213,6 +220,7 @@ public class NekoAppearanceSettings extends BaseNekoSettingsActivity implements 
         appearanceRow = addRow("appearance");
         emojiSetsRow = addRow("emojiSets");
         mediaPreviewRow = addRow("mediaPreview");
+        predictiveBackAnimationRow = addRow("predictiveBackAnimation");
         appBarShadowRow = addRow("appBarShadow");
         formatTimeWithSecondsRow = addRow("formatTimeWithSeconds");
         disableNumberRoundingRow = addRow("disableNumberRounding");
@@ -294,6 +302,8 @@ public class NekoAppearanceSettings extends BaseNekoSettingsActivity implements 
                         textCell.setTextAndCheck(LocaleController.getString(R.string.DarkenAvatarBackground), NekoConfig.avatarBackgroundDarken, divider);
                     } else if (position == hideAllTabRow) {
                         textCell.setTextAndCheck(LocaleController.getString(R.string.HideAllTab), NekoConfig.hideAllTab, divider);
+                    } else if (position == predictiveBackAnimationRow) {
+                        textCell.setTextAndCheck(LocaleController.getString(R.string.PredictiveBackAnimation), NekoConfig.predictiveBackAnimation, divider);
                     }
                     break;
                 }

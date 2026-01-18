@@ -1072,7 +1072,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
 
         //RestrictedLanguagesSelectActivity.checkRestrictedLanguages(false);
-        if (Build.VERSION.SDK_INT >= 34) {
+        if (Build.VERSION.SDK_INT >= 34 && NekoConfig.predictiveBackAnimation) {
             if (onBackAnimationCallback == null) {
                 onBackAnimationCallback =  new OnBackAnimationCallback() {
                     private boolean started = false;
