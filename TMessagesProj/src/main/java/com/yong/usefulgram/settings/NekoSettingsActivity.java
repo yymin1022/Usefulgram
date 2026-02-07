@@ -110,7 +110,7 @@ public class NekoSettingsActivity extends BaseNekoSettingsActivity {
 
     @Override
     protected String getActionBarTitle() {
-        return LocaleController.getString(R.string.NekoSettings);
+        return LocaleController.getString(R.string.UsefulSettings);
     }
 
     @Override
@@ -214,7 +214,7 @@ public class NekoSettingsActivity extends BaseNekoSettingsActivity {
                     } else if (position == appearanceRow) {
                         textCell.setTextAndIcon(LocaleController.getString(R.string.ChangeChannelNameColor2), R.drawable.msg_theme, divider);
                     } else if (position == passcodeRow) {
-                        textCell.setTextAndIcon(LocaleController.getString(R.string.PasscodeNeko), R.drawable.msg_secret, divider);
+                        textCell.setTextAndIcon(LocaleController.getString(R.string.PasscodeUseful), R.drawable.msg_secret, divider);
                     } else if (position == experimentRow) {
                         textCell.setTextAndIcon(LocaleController.getString(R.string.NotificationsOther), R.drawable.msg_fave, divider);
                     } else if (position == accessibilityRow) {

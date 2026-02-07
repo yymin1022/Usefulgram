@@ -138,7 +138,7 @@ public class UpdateLayout extends IUpdateLayout {
             updateTextViews[i].setGravity(Gravity.LEFT);
             updateLayout.addView(updateTextViews[i], LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER_VERTICAL, 74, 0, 0, 0));
         }
-        updateTextViews[0].setText(LocaleController.getString(R.string.UpdateNekogram));
+        updateTextViews[0].setText(LocaleController.getString(R.string.UpdateUsefulgram));
         updateTextViews[1].setAlpha(0f);
         updateTextViews[1].setVisibility(View.GONE);
 
@@ -173,7 +173,7 @@ public class UpdateLayout extends IUpdateLayout {
                     showSize = false;
                 } else {
                     updateLayoutIcon.setIcon(MediaActionDrawable.ICON_DOWNLOAD, true, animated);
-                    setUpdateText(LocaleController.getString(R.string.UpdateNekogram), animated);
+                    setUpdateText(LocaleController.getString(R.string.UpdateUsefulgram), animated);
                     showSize = true;
                 }
             }

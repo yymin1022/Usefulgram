@@ -2562,7 +2562,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                                     } else {
                                                         drawerLayoutContainer.setAllowOpenDrawer(true, false);
                                                     }
-                                                }, () -> showBulletin(factory -> factory.createErrorBulletin(LocaleController.getString(R.string.UnknownNekoSettingsOption))), null);
+                                                }, () -> showBulletin(factory -> factory.createErrorBulletin(LocaleController.getString(R.string.UnknownUsefulSettingsOption))), null);
                                             } else if (path.startsWith("msg/") || path.startsWith("share/")) {
                                                 message = data.getQueryParameter("url");
                                                 if (message == null) {
@@ -3120,7 +3120,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                             } else {
                                                 drawerLayoutContainer.setAllowOpenDrawer(true, false);
                                             }
-                                        }, () -> showBulletin(factory -> factory.createErrorBulletin(LocaleController.getString(R.string.UnknownNekoSettingsOption))), progress);
+                                        }, () -> showBulletin(factory -> factory.createErrorBulletin(LocaleController.getString(R.string.UnknownUsefulSettingsOption))), progress);
                                     } else if ((url.startsWith("tg:search") || url.startsWith("tg://search"))) {
                                         url = url.replace("tg:search", "tg://telegram.org").replace("tg://search", "tg://telegram.org");
                                         data = Uri.parse(url);

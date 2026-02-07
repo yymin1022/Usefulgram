@@ -171,7 +171,7 @@ public class NekoPasscodeSettingsActivity extends BaseNekoSettingsActivity {
 
     @Override
     protected String getActionBarTitle() {
-        return LocaleController.getString(R.string.PasscodeNeko);
+        return LocaleController.getString(R.string.PasscodeUseful);
     }
 
     @Override

@@ -345,7 +345,7 @@ public class NekoGeneralSettingsActivity extends BaseNekoSettingsActivity {
                                     LocaleController.getString(R.string.TranslatorTypeTG);
                             case NekoConfig.TRANS_TYPE_EXTERNAL ->
                                     LocaleController.getString(R.string.TranslatorTypeExternal);
-                            default -> LocaleController.getString(R.string.TranslatorTypeNeko);
+                            default -> LocaleController.getString(R.string.TranslatorTypeUseful);
                         };
                         textCell.setTextAndValue(LocaleController.getString(R.string.TranslatorType), value, partial, divider);
                     } else if (position == doNotTranslateRow) {

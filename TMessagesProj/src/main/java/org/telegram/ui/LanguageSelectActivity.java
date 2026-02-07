@@ -763,7 +763,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                     if (doNotTranslateCellValue == null) {
                         doNotTranslateCellValue = String.format(LocaleController.getPluralString("Languages", langCodes.size()), langCodes.size());
                     }*/
-                    settingsCell.setText(LocaleController.getString(R.string.NekoSettings), false);
+                    settingsCell.setText(LocaleController.getString(R.string.UsefulSettings), false);
                     break;
                 }
                 case VIEW_TYPE_SETTINGS_2: {
