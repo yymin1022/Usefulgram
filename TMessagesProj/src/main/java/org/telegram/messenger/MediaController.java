@@ -102,7 +102,6 @@ import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.VideoPlayer;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
 import java.io.File;
@@ -125,9 +124,9 @@ import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
-import tw.nekomimi.nekogram.SaveToDownloadReceiver;
-import tw.nekomimi.nekogram.NekoConfig;
-import tw.nekomimi.nekogram.helpers.VoiceEnhancementsHelper;
+import com.yong.usefulgram.SaveToDownloadReceiver;
+import com.yong.usefulgram.NekoConfig;
+import com.yong.usefulgram.helpers.VoiceEnhancementsHelper;
 
 public class MediaController implements AudioManager.OnAudioFocusChangeListener, NotificationCenter.NotificationCenterDelegate, SensorEventListener {
 

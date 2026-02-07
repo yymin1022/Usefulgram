@@ -163,7 +163,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
 import com.yong.usefulgram.Extra;
-import tw.nekomimi.nekogram.helpers.PasscodeHelper;
+import com.yong.usefulgram.helpers.PasscodeHelper;
 
 public class AlertsCreator {
     public final static int PERMISSIONS_REQUEST_TOP_ICON_SIZE = 72;

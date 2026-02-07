@@ -6,7 +6,6 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
@@ -35,10 +34,9 @@ import org.telegram.messenger.browser.Browser;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.spoilers.SpoilersTextView;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-import tw.nekomimi.nekogram.TextViewEffects;
+import com.yong.usefulgram.TextViewEffects;
 
 public class UpdateAppAlertDialog extends BottomSheet {
 

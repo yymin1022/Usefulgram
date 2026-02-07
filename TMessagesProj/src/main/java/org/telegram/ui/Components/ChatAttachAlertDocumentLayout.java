@@ -91,7 +91,7 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.StringTokenizer;
 
-import tw.nekomimi.nekogram.helpers.EmojiHelper;
+import com.yong.usefulgram.helpers.EmojiHelper;
 
 public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLayout {
 

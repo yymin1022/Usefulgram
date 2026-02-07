@@ -55,7 +55,7 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import tw.nekomimi.nekogram.NekoConfig;
+import com.yong.usefulgram.NekoConfig;
 
 public class LocaleController {
 

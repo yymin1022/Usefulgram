@@ -68,13 +68,12 @@ import org.telegram.ui.SearchAdsInfoBottomSheet;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Set;
 
-import tw.nekomimi.nekogram.NekoConfig;
-import tw.nekomimi.nekogram.forward.ForwardContext;
-import tw.nekomimi.nekogram.forward.ForwardDrawable;
-import tw.nekomimi.nekogram.forward.ForwardItem;
+import com.yong.usefulgram.NekoConfig;
+import com.yong.usefulgram.forward.ForwardContext;
+import com.yong.usefulgram.forward.ForwardDrawable;
+import com.yong.usefulgram.forward.ForwardItem;
 
 public class SearchViewPager extends ViewPagerFixed implements FilteredSearchView.UiCallback, NotificationCenter.NotificationCenterDelegate {
 

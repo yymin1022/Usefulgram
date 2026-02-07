@@ -161,7 +161,7 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.yong.usefulgram.Extra;
-import tw.nekomimi.nekogram.helpers.WebAppHelper;
+import com.yong.usefulgram.helpers.WebAppHelper;
 
 public abstract class BotWebViewContainer extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private final static String DURGER_KING_USERNAME = "DurgerKingBot";

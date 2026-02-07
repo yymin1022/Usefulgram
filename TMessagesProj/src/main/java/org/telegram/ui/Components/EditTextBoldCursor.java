@@ -9,7 +9,6 @@
 package org.telegram.ui.Components;
 
 import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.getWallpaperRotation;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -33,20 +32,17 @@ import android.os.Build;
 import android.os.SystemClock;
 
 import androidx.annotation.Keep;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 
 import android.text.Editable;
 import android.text.Layout;
-import android.text.Selection;
 import android.text.Spanned;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.ActionMode;
 import android.view.Gravity;
 import android.view.Menu;
@@ -55,7 +51,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import org.lsposed.hiddenapibypass.HiddenApiBypass;
@@ -77,7 +72,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import tw.nekomimi.nekogram.NekoConfig;
+import com.yong.usefulgram.NekoConfig;
 
 public class EditTextBoldCursor extends EditTextEffects {
 

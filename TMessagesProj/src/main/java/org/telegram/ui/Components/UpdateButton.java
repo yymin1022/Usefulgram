@@ -33,7 +33,7 @@ import org.telegram.ui.IUpdateButton;
 
 import java.io.File;
 
-import tw.nekomimi.nekogram.helpers.ApkInstaller;
+import com.yong.usefulgram.helpers.ApkInstaller;
 
 public class UpdateButton extends IUpdateButton {
 

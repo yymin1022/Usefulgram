@@ -154,9 +154,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import tw.nekomimi.nekogram.MessageDetailsActivity;
-import tw.nekomimi.nekogram.NekoConfig;
-import tw.nekomimi.nekogram.helpers.WebAppHelper;
+import com.yong.usefulgram.MessageDetailsActivity;
+import com.yong.usefulgram.NekoConfig;
+import com.yong.usefulgram.helpers.WebAppHelper;
 
 public class ChannelAdminLogActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
 

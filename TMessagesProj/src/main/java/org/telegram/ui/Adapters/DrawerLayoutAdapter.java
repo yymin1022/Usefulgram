@@ -9,7 +9,6 @@
 package org.telegram.ui.Adapters;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -39,8 +38,8 @@ import org.telegram.ui.Components.SideMenultItemAnimator;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import tw.nekomimi.nekogram.NekoConfig;
-import tw.nekomimi.nekogram.helpers.PasscodeHelper;
+import com.yong.usefulgram.NekoConfig;
+import com.yong.usefulgram.helpers.PasscodeHelper;
 
 public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
 

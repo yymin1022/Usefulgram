@@ -22,8 +22,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -33,7 +31,6 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
@@ -41,9 +38,9 @@ import org.telegram.ui.Components.voip.CellFlickerDrawable;
 import java.io.File;
 import java.util.Locale;
 
-import tw.nekomimi.nekogram.TextViewEffects;
-import tw.nekomimi.nekogram.helpers.ApkInstaller;
-import tw.nekomimi.nekogram.helpers.remote.UpdateHelper;
+import com.yong.usefulgram.TextViewEffects;
+import com.yong.usefulgram.helpers.ApkInstaller;
+import com.yong.usefulgram.helpers.remote.UpdateHelper;
 
 public class BlockingUpdateView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
 

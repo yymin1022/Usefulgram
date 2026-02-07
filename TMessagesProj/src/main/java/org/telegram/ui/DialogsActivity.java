@@ -60,7 +60,6 @@ import android.util.Property;
 import android.util.StateSet;
 import android.view.Gravity;
 import android.view.HapticFeedbackConstants;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
@@ -249,11 +248,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-import tw.nekomimi.nekogram.BackButtonMenuRecent;
-import tw.nekomimi.nekogram.forward.ForwardContext;
-import tw.nekomimi.nekogram.NekoConfig;
-import tw.nekomimi.nekogram.forward.SendOptionsMenuLayout;
-import tw.nekomimi.nekogram.helpers.PasscodeHelper;
+import com.yong.usefulgram.BackButtonMenuRecent;
+import com.yong.usefulgram.forward.ForwardContext;
+import com.yong.usefulgram.NekoConfig;
+import com.yong.usefulgram.forward.SendOptionsMenuLayout;
+import com.yong.usefulgram.helpers.PasscodeHelper;
 
 public class DialogsActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, FloatingDebugProvider {
 

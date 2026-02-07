@@ -51,10 +51,10 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
 
-import tw.nekomimi.nekogram.FirebaseFix;
-import tw.nekomimi.nekogram.NekoConfig;
-import tw.nekomimi.nekogram.helpers.AnalyticsHelper;
-import tw.nekomimi.nekogram.helpers.ComponentsHelper;
+import com.yong.usefulgram.FirebaseFix;
+
+import com.yong.usefulgram.helpers.AnalyticsHelper;
+import com.yong.usefulgram.helpers.ComponentsHelper;
 
 public class ApplicationLoader extends Application {
 

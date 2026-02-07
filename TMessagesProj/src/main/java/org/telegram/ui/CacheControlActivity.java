@@ -115,7 +115,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 
-import tw.nekomimi.nekogram.helpers.EmojiHelper;
+import com.yong.usefulgram.helpers.EmojiHelper;
 
 public class CacheControlActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
 

@@ -87,7 +87,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
-import tw.nekomimi.nekogram.NekoConfig;
+import com.yong.usefulgram.NekoConfig;
 
 public class StoriesController {
 

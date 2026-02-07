@@ -259,15 +259,15 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 import com.yong.usefulgram.Extra;
-import tw.nekomimi.nekogram.forward.ForwardContext;
-import tw.nekomimi.nekogram.NekoConfig;
-import tw.nekomimi.nekogram.helpers.ApkInstaller;
-import tw.nekomimi.nekogram.helpers.MonetHelper;
-import tw.nekomimi.nekogram.helpers.SettingsHelper;
-import tw.nekomimi.nekogram.helpers.UserHelper;
-import tw.nekomimi.nekogram.helpers.remote.UpdateHelper;
-import tw.nekomimi.nekogram.settings.NekoDonateActivity;
-import tw.nekomimi.nekogram.settings.NekoSettingsActivity;
+import com.yong.usefulgram.forward.ForwardContext;
+import com.yong.usefulgram.NekoConfig;
+import com.yong.usefulgram.helpers.ApkInstaller;
+import com.yong.usefulgram.helpers.MonetHelper;
+import com.yong.usefulgram.helpers.SettingsHelper;
+import com.yong.usefulgram.helpers.UserHelper;
+import com.yong.usefulgram.helpers.remote.UpdateHelper;
+import com.yong.usefulgram.settings.NekoDonateActivity;
+import com.yong.usefulgram.settings.NekoSettingsActivity;
 
 public class LaunchActivity extends BasePermissionsActivity implements INavigationLayout.INavigationLayoutDelegate, NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate, IPipActivity {
     public final static String EXTRA_FORCE_NOT_INTERNAL_APPS = "force_not_internal_apps";
@@ -3350,9 +3350,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                             NotificationCenter.getInstance(intentAccount[0]).postNotificationName(NotificationCenter.closeChats);
                                             push_user_id = userId;
                                             String mimeType = cursor.getString(cursor.getColumnIndex(ContactsContract.Data.MIMETYPE));
-                                            if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.tw.nekomimi.nekogram.android.call")) {
+                                            if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.com.yong.usefulgram.android.call")) {
                                                 audioCallUser = true;
-                                            } else if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.tw.nekomimi.nekogram.android.call.video")) {
+                                            } else if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.com.yong.usefulgram.android.call.video")) {
                                                 videoCallUser = true;
                                             }
                                         }

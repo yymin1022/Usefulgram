@@ -375,7 +375,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="vnd.android.cursor.item/vnd.tw.nekomimi.nekogram.android.profile"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.yong.usefulgram.android.profile"/>
             </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW"/>
@@ -419,8 +419,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="vnd.android.cursor.item/vnd.tw.nekomimi.nekogram.android.call"/>
-                <data android:mimeType="vnd.android.cursor.item/vnd.tw.nekomimi.nekogram.android.call.video"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.yong.usefulgram.android.call"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.yong.usefulgram.android.call.video"/>
             </intent-filter>
         </activity-alias>
         <activity
@@ -796,13 +796,13 @@ e            <intent-filter>
             </intent-filter>
         </service>
 
-        <receiver android:name="tw.nekomimi.nekogram.helpers.ApkInstaller$UpdateReceiver" android:exported="true">
+        <receiver android:name="com.yong.usefulgram.helpers.ApkInstaller$UpdateReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="tw.nekomimi.nekogram.SaveToDownloadReceiver" android:exported="false">
+        <receiver android:name="com.yong.usefulgram.SaveToDownloadReceiver" android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.CANCEL_SAVE_TO_DOWNLOAD" />
             </intent-filter>
@@ -810,7 +810,7 @@ e            <intent-filter>
 
         <provider
             android:authorities="${applicationId}.streaming"
-            android:name="tw.nekomimi.nekogram.streaming.MediaStreamingProvider"
+            android:name="com.yong.usefulgram.streaming.MediaStreamingProvider"
             android:exported="false"
             android:grantUriPermissions="true"/>
 

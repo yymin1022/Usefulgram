@@ -111,7 +111,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.AccountInstance;
@@ -212,10 +211,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicReference;
 
-import tw.nekomimi.nekogram.BackButtonMenuRecent;
-import tw.nekomimi.nekogram.EditTextAutoFill;
-import tw.nekomimi.nekogram.QrView;
-import tw.nekomimi.nekogram.helpers.PasscodeHelper;
+import com.yong.usefulgram.BackButtonMenuRecent;
+import com.yong.usefulgram.EditTextAutoFill;
+import com.yong.usefulgram.QrView;
+import com.yong.usefulgram.helpers.PasscodeHelper;
 
 @SuppressLint("HardwareIds")
 public class LoginActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
