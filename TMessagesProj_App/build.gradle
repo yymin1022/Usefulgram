@@ -79,7 +79,9 @@ android {
     }
 
     splits.abi {
-        var buildingBundle = gradle.startParameter.taskNames.any { it.startsWith("bundle") }
+        var taskNames = gradle.startParameter.taskNames.join(' ').toLowerCase()
+        var buildingBundle = taskNames.contains("bundle") || taskNames.contains("prebundle") || taskNames.contains("aab")
+
         enable !buildingBundle
         universalApk true
 
