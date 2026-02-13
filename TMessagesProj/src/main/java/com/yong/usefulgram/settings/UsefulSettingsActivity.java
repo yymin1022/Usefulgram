@@ -41,16 +41,9 @@ public class UsefulSettingsActivity extends BaseUsefulSettingsActivity {
     private int categories2Row;
 
     private int aboutRow;
-    private int channelRow;
     private int websiteRow;
     private int sourceCodeRow;
-    private int translationRow;
-    private int donateRow;
-    private int checkUpdateRow;
     private int about2Row;
-
-    private int sponsorRow;
-    private int sponsor2Row;
 
     @Override
     public View createView(Context context) {
@@ -77,29 +70,10 @@ public class UsefulSettingsActivity extends BaseUsefulSettingsActivity {
             presentFragment(new UsefulExperimentalSettingsActivity());
         } else if (position == accessibilityRow) {
             presentFragment(new AccessibilitySettingsActivity());
-        } else if (position == channelRow) {
-            getMessagesController().openByUserName(LocaleController.getString(R.string.OfficialChannelUsername), this, 1);
-        } else if (position == donateRow) {
-            presentFragment(new UsefulDonateActivity());
-        } else if (position == translationRow) {
-            Browser.openUrl(getParentActivity(), "https://neko.crowdin.com/nekogram");
         } else if (position == websiteRow) {
             Browser.openUrl(getParentActivity(), "https://nekogram.app");
         } else if (position == sourceCodeRow) {
             Browser.openUrl(getParentActivity(), "https://github.com/Nekogram/Nekogram");
-        } else if (position == checkUpdateRow) {
-            ((LaunchActivity) getParentActivity()).checkAppUpdate(true, new Browser.Progress() {
-                @Override
-                public void end() {
-                    checkingUpdate = false;
-                    listAdapter.notifyItemChanged(checkUpdateRow);
-                }
-            });
-            checkingUpdate = true;
-            listAdapter.notifyItemChanged(checkUpdateRow);
-        } else if (position >= sponsorRow && position < sponsor2Row) {
-            ConfigHelper.News item = news.get(position - sponsorRow);
-            Browser.openUrl(getParentActivity(), item.url);
         }
     }
 
@@ -141,22 +115,9 @@ public class UsefulSettingsActivity extends BaseUsefulSettingsActivity {
         categories2Row = addRow();
 
         aboutRow = addRow("about");
-        channelRow = addRow("channel");
         websiteRow = addRow("website");
         sourceCodeRow = addRow("sourceCode");
-        translationRow = addRow("translation");
-        donateRow = addRow("donate");
-        checkUpdateRow = addRow("checkUpdate");
         about2Row = addRow();
-
-        if (!news.isEmpty()) {
-            sponsorRow = addRow();
-            rowCount += news.size() - 1;
-            sponsor2Row = addRow();
-        } else {
-            sponsorRow = -1;
-            sponsor2Row = -1;
-        }
     }
 
     private class ListAdapter extends BaseListAdapter {
@@ -170,9 +131,7 @@ public class UsefulSettingsActivity extends BaseUsefulSettingsActivity {
             switch (holder.getItemViewType()) {
                 case TYPE_SETTINGS: {
                     TextSettingsCell textCell = (TextSettingsCell) holder.itemView;
-                    if (position == channelRow) {
-                        textCell.setTextAndValue(LocaleController.getString(R.string.OfficialChannel), "@" + LocaleController.getString(R.string.OfficialChannelUsername), divider);
-                    } else if (position == websiteRow) {
+                    if (position == websiteRow) {
                         textCell.setTextAndValue(LocaleController.getString(R.string.OfficialSite), "nekogram.app", divider);
                     } else if (position == sourceCodeRow) {
                         textCell.setTextAndValue(LocaleController.getString(R.string.ViewSourceCode), "GitHub", divider);
@@ -191,18 +150,6 @@ public class UsefulSettingsActivity extends BaseUsefulSettingsActivity {
                 case TYPE_DETAIL_SETTINGS: {
                     TextDetailSettingsCell textCell = (TextDetailSettingsCell) holder.itemView;
                     textCell.setMultilineDetail(true);
-                    if (position == translationRow) {
-                        textCell.setTextAndValue(LocaleController.getString(R.string.Translation), LocaleController.getString(R.string.TranslationAbout), divider);
-                    } else if (position == donateRow) {
-                        textCell.setTextAndValue(LocaleController.getString(R.string.Donate), LocaleController.getString(R.string.DonateAbout), divider);
-                    } else if (position == checkUpdateRow) {
-                        textCell.setTextAndValue(LocaleController.getString(R.string.CheckUpdate),
-                                checkingUpdate ? LocaleController.getString(R.string.CheckingUpdate) :
-                                        UpdateHelper.formatDateUpdate(SharedConfig.lastUpdateCheckTime), divider);
-                    } else if (position >= sponsorRow && position < sponsor2Row) {
-                        ConfigHelper.News item = news.get(position - sponsorRow);
-                        textCell.setTextAndValue(item.title, item.summary, divider);
-                    }
                     break;
                 }
                 case TYPE_TEXT: {
@@ -227,16 +174,12 @@ public class UsefulSettingsActivity extends BaseUsefulSettingsActivity {
 
         @Override
         public int getItemViewType(int position) {
-            if (position >= sponsorRow && position < sponsor2Row) {
-                return TYPE_DETAIL_SETTINGS;
-            } else if (position == categories2Row || position == about2Row || position == sponsor2Row) {
+            if (position == categories2Row || position == about2Row) {
                 return TYPE_SHADOW;
-            } else if (position >= channelRow && position < translationRow) {
+            } else if (position >= websiteRow && position < about2Row) {
                 return TYPE_SETTINGS;
             } else if (position == categoriesRow || position == aboutRow) {
                 return TYPE_HEADER;
-            } else if (position >= translationRow && position < about2Row) {
-                return TYPE_DETAIL_SETTINGS;
             } else if (position > categoriesRow && position < categories2Row) {
                 return TYPE_TEXT;
             }
